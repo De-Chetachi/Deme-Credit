@@ -27,7 +27,7 @@ export const currentUser = (
         const userData = Jwt.verify(req.session.token, process.env.JWT_TOKEN!) as UserData;
         req.currentUser = userData;
     } catch(err: any) {
-        //console.log(err.message);
+        console.log(err.message);
     } finally {
         next();
     }

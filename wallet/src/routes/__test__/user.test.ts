@@ -2,7 +2,7 @@ import request from 'supertest';
 import app from '../../app';
 
 
-describe('User Controller', () => {
+describe('User Router', () => {
     describe('POST /api/wallet/users', () => {
         it('should create a new user', async () => {
             const response = await request(app)
@@ -17,7 +17,7 @@ describe('User Controller', () => {
             expect(response.body.object).toHaveProperty('id');
             expect(response.body.object).toHaveProperty('name', 'John Doe');
             expect(response.body.object).toHaveProperty('email', 'john@gmail.com');
-        }, 30000);
+        });
 
         it('should return error if user already exists', async () => {
             await request(app)
@@ -96,7 +96,7 @@ describe('User Controller', () => {
 
 
         it('returns 400 for logged in user', async () => {
-            const cookie = await global.getAuthCookie();
+            const cookie = await getAuthCookie();
             await request(app)
             .post('/api/wallet/users/login')
             .set('Cookie', cookie)

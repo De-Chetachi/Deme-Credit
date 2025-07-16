@@ -20,6 +20,7 @@ app.use(cookieSession({
 
 app.use((req: Request, res: Response, next: NextFunction) => {
     console.log(req.path, req.method);
+    next();
 });
 
 

@@ -51,9 +51,12 @@ export class Transaction {
 
     
 
-    static async findById(id: string): Promise<Transaction> {
+    static async findById(id: string): Promise<Transaction | null> {
         try {
             const transaction = await dbClient(this.tableName).where({ id }).first();
+            if(!transaction) {
+                return  null;
+            }
             return Transaction.build(transaction);
         } catch(error: any) {
             throw new BadRequestError(error.message);

@@ -4,7 +4,7 @@ import { Account } from '../models/account';
 
 class AccountController {
     static async getAccount(req: Request, res: Response) {
-        const userId = req.params.userId; 
+        const userId = req.currentUser!.id; 
         const account = await Account.findByUser(userId);
         if (!account) {
             return res.status(200).json({ message: 'No account found for this user', object: {} });
@@ -14,7 +14,7 @@ class AccountController {
 
 
     static async createAccount(req: Request, res: Response) {
-        const user = req.params.userId;
+        const user = req.currentUser!.id;
         const account = Account.build({ user });
         await account.save();
         res.status(201).json({ message: 'Account created successfully', object: account });

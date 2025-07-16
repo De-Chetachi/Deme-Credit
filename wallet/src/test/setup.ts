@@ -48,8 +48,8 @@ global.getAuthCookie = async () => {
   const loginResponse = await request(app)
     .post('/api/wallet/users/login')
     .send({
-        name: 'John Doe',
         email: 'john@gmail.com',
+        password: 'password'
     })
     .expect(200);
   const cookie = loginResponse.get('Set-Cookie');
