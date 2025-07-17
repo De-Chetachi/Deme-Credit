@@ -399,6 +399,10 @@ Processes all financial transactions:
 
 ### Account Routes (`/api/wallet/accounts`)
 
+
+### Transaction Routes(`/api/wallet/transactions`)
+
+
 ## Middleware
 
 ### Authentication Middleware
