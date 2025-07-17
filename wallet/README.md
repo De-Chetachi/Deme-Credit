@@ -160,7 +160,7 @@ PORT=3000
 
 # External APIs
 KARMA_API_URL=https://adjutor.lendsqr.com/v2/verification/karma
-
+```
 
 
 ## API Endpoints
