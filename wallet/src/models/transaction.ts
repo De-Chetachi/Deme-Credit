@@ -21,6 +21,8 @@ interface TransactionAttrs {
     amount: number;
     type: transactionType;
     status: status;
+    created_at?: string;
+    updated_at?: string;
 }
 
 interface TransferAttrs extends TransactionAttrs {
@@ -35,6 +37,8 @@ export class Transaction {
     amount: number;
     type: string;
     status: status;
+    created_at: string;
+    updated_at: string;
 
     constructor(transaction: TransactionAttrs) {
         this.id = transaction.id || uuidv4();
@@ -42,6 +46,8 @@ export class Transaction {
         this.amount = transaction.amount;
         this.type = transaction.type;
         this.status = transaction.status;
+        this.created_at = transaction.created_at || new Date().toISOString();
+        this.updated_at = transaction.updated_at || new Date().toISOString();
     }
 
 

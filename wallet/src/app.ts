@@ -4,10 +4,11 @@ import cookieSession from 'cookie-session';
 import { currentUser } from './middlewares/current_user';
 import { errorHandler } from './middlewares/error_handler';
 import { NotFoundError } from './errors/notfound_error';
-//import 'express-async-errors';
 import userRouter from './routes/user';
 import accountRouter from './routes/account';
 import transactionRouter from './routes/transaction';
+import swaggerUi from 'swagger-ui-express';
+//import { swaggerSpec } from 'config/swagger';
 
 
 const app = express();

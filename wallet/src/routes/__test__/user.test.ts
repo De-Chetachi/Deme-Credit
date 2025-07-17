@@ -1,7 +1,7 @@
 import request from 'supertest';
 import app from '../../app';
 
-
+//integration test for user routes
 describe('User Router', () => {
     describe('POST /api/wallet/users', () => {
         it('should create a new user', async () => {

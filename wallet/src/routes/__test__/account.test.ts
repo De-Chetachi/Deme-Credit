@@ -1,6 +1,8 @@
 import request from 'supertest';
 import app from '../../app';
 
+//integration test for account routes
+
 const url = '/api/wallet/accounts';
 describe('test for Account Router', () => { 
     describe('test for GET /api/wallet/accounts', () => {

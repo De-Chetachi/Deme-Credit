@@ -1,18 +1,21 @@
 import request from 'supertest';
 import app from '../../app';
 
+//integration test for transaction routes
 describe('test for the Transaction router', () => {
 
     describe('test get /api/wallet/transactions', () => {
         it('should return 200 and the transactions', async () => {
             const cookie = await global.getAuthCookie();
+
+            //simulate account creation
+
+            //simulate transaction creation
             const response = await request(app)
                 .get('/api/wallet/transactions')
                 .set('Cookie', cookie)
                 .expect(200);
-            //simulate account creation
-
-            //simulate transaction creation
+            
 
             expect(response.body.message).toBe('Transactions fetched successfully');
             expect(response.body.object).toBeInstanceOf(Array);
