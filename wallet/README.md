@@ -12,18 +12,14 @@ A comprehensive RESTful wallet API system built with Node.js, Express, and TypeS
 - [Project Structure](#project-structure)
 - [Installation](#installation)
 - [Environment Variables](#environment-variables)
-- [Database Setup](#database-setup)
 - [API Endpoints](#api-endpoints)
-- [Models](#models)
 - [Controllers](#controllers)
 - [Routes](#routes)
 - [Middleware](#middleware)
 - [Error Handling](#error-handling)
 - [Authentication](#authentication)
-- [Utilities](#utilities)
 - [Usage Examples](#usage-examples)
 - [Testing](#testing)
-- [Performance](#performance-considerations)
 - [Deployment](#deployment)
 
 ## Features
@@ -601,6 +597,7 @@ npm run test
    - Karma API integration for user validation
    - Environment-based configuration
 
+```
 
 ## Deployment
 
@@ -610,7 +607,10 @@ npm run test
 NODE_ENV=production
 DATABASE_URL=postgresql://user:password@host:port/database
 JWT_SECRET=super_secure_production_secret
-PORT=3000
+DB_HOST=database_host
+DB_USER=database_user
+DB_NAME=database_name
+DB_PASSWORD=user_password
 ```
 
 ### Build and Deploy

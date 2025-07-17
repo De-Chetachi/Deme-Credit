@@ -6,7 +6,6 @@ declare global {
     var getAuthCookie: () => Promise<string[]>;
 }
 
-
 beforeAll(async () => {
     process.env.JWT_SECRET ='sdfghjkl';
     process.env.NODE_ENV = 'test';
