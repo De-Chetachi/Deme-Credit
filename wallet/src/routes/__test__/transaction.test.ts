@@ -10,6 +10,10 @@ describe('test for the Transaction router', () => {
                 .get('/api/wallet/transactions')
                 .set('Cookie', cookie)
                 .expect(200);
+            //simulate account creation
+
+            //simulate transaction creation
+
             expect(response.body.message).toBe('Transactions fetched successfully');
             expect(response.body.object).toBeInstanceOf(Array);
         });
@@ -29,6 +33,8 @@ describe('test for the Transaction router', () => {
                 .get('/api/wallet/transactions/1')
                 .set('Cookie', cookie)
                 .expect(200);
+            //simulate account creation
+            //simulate transaction creation
             expect(response.body.message).toBe('Transaction fetched successfully');
             expect(response.body.object).toHaveProperty('id');
         });
@@ -50,6 +56,22 @@ describe('test for the Transaction router', () => {
 
     describe('test /api/wallet/transactions/withdraw', () => { 
 
+        it ('should fail for non-existent user 401', async () => {
+            const cookie = await global.getAuthCookie();
+        });
+
+        it ('should fail for non-existent account 404', async () => {
+            const cookie = await global.getAuthCookie();
+        });
+
+        it ('should fail for insufficient balance 400', async () => {
+            const cookie = await global.getAuthCookie();
+        });
+
+        it('should return 400 if amount is not provided or is not positive', async () => {
+            const cookie = await global.getAuthCookie();
+        });
+
         it('should return 201 and withdraw the amount', async () => {
 
         });
@@ -58,9 +80,53 @@ describe('test for the Transaction router', () => {
 
     describe('test /api/wallet/transactions/deposit', () => {
 
+        it ('should fail for non-existent user 401', async () => {
+            const cookie = await global.getAuthCookie();
+        });
+
+        it ('should fail for non-existent account 404', async () => {
+            const cookie = await global.getAuthCookie();
+        });
+
+        it ('should fail for insufficient balance 400', async () => {
+            const cookie = await global.getAuthCookie();
+        });
+
+        it('should return 400 if amount is not provided or is not positive', async () => {
+            const cookie = await global.getAuthCookie();
+        });
+
+        it('should return 201 and deposit the amount', async () => {
+
+        });
+
     })
 
     describe('test /api/wallet/transactions/transfer', () => {
+
+        it ('should fail for non-existent user 401', async () => {
+            const cookie = await global.getAuthCookie();
+        });
+
+        it ('should fail for non-existent account 404', async () => {
+            const cookie = await global.getAuthCookie();
+        });
+
+        it ('should fail for insufficient balance 400', async () => {
+            const cookie = await global.getAuthCookie();
+        });
+
+        it('should return 400 if amount is not provided or is not positive', async () => {
+            const cookie = await global.getAuthCookie();
+        });
+
+        it('should return 404 if receiver account does not exist', async () => {
+            const cookie = await global.getAuthCookie();
+        });
+
+        it('should return 201 and transer the amount', async () => {
+
+        });
 
     });
 })
