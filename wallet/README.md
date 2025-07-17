@@ -1,1 +1,1 @@
-![wallet schema - architecture]('./wallet_1.png')
+![wallet schema - architecture]('wallet_1.png')
