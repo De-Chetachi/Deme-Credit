@@ -4,7 +4,7 @@ import type { Knex } from "knex";
 export async function up(knex: Knex): Promise<void> {
     return knex.schema.createTable('transactions', (table) => {
         table.string('id').primary().unique();
-        table.string('account').references('accounts.account_number');
+        table.string('account').references('accounts.id');
         table.float('amount').notNullable();
         table.string('type').notNullable();
         table.string('status').notNullable();

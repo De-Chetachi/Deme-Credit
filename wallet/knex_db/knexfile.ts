@@ -5,14 +5,14 @@ const config: { [key: string]: Knex.Config } = {
         client: 'mysql2',
         connection: {
             host: 'localhost',
-            user: 'cheta',
-            password: 'cheta123',
-            database: 'wallet',
+            user: 'chetachi',
+            password: 'cheta1234',
+            database: 'test_wallet',
             port: 3306,
         },
         migrations: {
             tableName: 'migrations',
-            directory: './migrations',
+            directory: './knex_db/migrations',
         },
         seeds: {
             directory: './seeds',
@@ -38,12 +38,17 @@ const config: { [key: string]: Knex.Config } = {
     },
 
     production: {
-        client: 'mysql',
+        client: 'mysql2',
         connection: {
             host: process.env.DB_HOST,
             user: process.env.DB_USER,
             database: process.env.DB_NAME,
             password: process.env.DB_PASSWORD,
+            port: 3306,
+        },
+        migrations: {
+            tableName: 'migrations',
+            directory: './src/migrations',
         },
     },
 };

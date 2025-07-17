@@ -10,7 +10,6 @@ export async function up(knex: Knex): Promise<void> {
         table.string('currency').defaultTo('#');
         table.timestamp('created_at').defaultTo(knex.fn.now());
         table.timestamp('updated_at').defaultTo(knex.raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
-        //table.timestamp('updated_at').defaultTo(knex.fn.now());
     })
 }
 export async function down(knex: Knex): Promise<void> {
